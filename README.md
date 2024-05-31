@@ -1,2 +1,2 @@
-# JAVA23-AJS-slutprojekt-Adam-Barnell3
-Slutprojekt i avancerad javascript av Adam Barnell
+# JAVA23-AJS-slutprojekt-Adam-Barnell1
+ Slutprojekt i avancerad javascript av Adam Barnell

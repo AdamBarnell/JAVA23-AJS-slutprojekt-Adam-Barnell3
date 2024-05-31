@@ -1,0 +1,22 @@
+.task-form {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.task-form input,
+.task-form select {
+  margin: 10px;
+  padding: 8px;
+  font-size: 14px;
+  width: 300px;
+  background-color: #dfeeff;
+}
+
+.task-form button {
+  margin: 10px;
+  padding: 8px;
+  font-size: 14px;
+  background-color: #007bff;
+}

@@ -1,0 +1,47 @@
+.chatbox {
+  width: 28%;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  height: 540px;
+  display: flex;
+  flex-direction: column;
+}
+
+.messages {
+  flex-grow: 1;
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  word-wrap: break-word;
+}
+
+.message {
+  border-bottom: 2px solid #9ff1ff;
+  padding: 10px 0;
+  word-wrap: break-word;
+}
+
+.new-message {
+  display: flex;
+}
+
+.new-message input {
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+  margin-right: 10px;
+  white-space: pre-wrap;
+}
+
+.new-message button {
+  padding: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.new-message button:hover {
+  background-color: #b7ff93;
+}
