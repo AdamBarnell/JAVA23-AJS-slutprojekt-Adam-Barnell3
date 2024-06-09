@@ -12,8 +12,8 @@ import "../css/Login.css";
 //Logins through database exisiting users and google account. Can be extending with other ways to sign in
 
 function LoginForm() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  let email = "";
+  let password = "";
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -46,20 +46,18 @@ function LoginForm() {
         <form onSubmit={handleLogin}>
           <div className="input-group">
             <label>Email:</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
+              <input
+                type="email"
+                onChange={(e) => (email = e.target.value)}
+                required
+              />
           </div>
           <div className="input-group">
             <label>Password:</label>
             <input
               type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
+              onChange={(e) => (password = e.target.value)}
+                required
             />
           </div>
           {error && <p className="error">{error}</p>}

@@ -8,6 +8,7 @@ import "../css/Login.css";
 import SearchTask from "./SearchTask";
 
 // Main component that integrates all subcomponents related to task management.
+
 function ScrumbBoard({ currentUser, handleLogout }) {
   const [tasks, setTasks] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -28,8 +29,6 @@ function ScrumbBoard({ currentUser, handleLogout }) {
       setFilteredTasks(loadedTasks);
       setError("");
     });
-
-    return;
   }, []);
 
   async function addTask(title, category) {
@@ -99,23 +98,25 @@ function ScrumbBoard({ currentUser, handleLogout }) {
                     <p>Category: {task.category}</p>
                     {status === "Todo" && (
                       <>
-                        <input
-                          type="text"
-                          placeholder="Owner of task"
-                          onChange={(e) => {
-                            const owner = e.target.value;
-                            if (owner) {
-                              updateTask(task.id, { owner });
+                        <form>
+                          <input
+                            type="text"
+                            placeholder="Owner of task"
+                            onChange={(e) => {
+                              const owner = e.target.value;
+                              if (owner) {
+                                updateTask(task.id, { owner });
+                              }
+                            }}
+                          />
+                          <button
+                            onClick={() =>
+                              updateTask(task.id, { status: "Progress" })
                             }
-                          }}
-                        />
-                        <button
-                          onClick={() =>
-                            updateTask(task.id, { status: "Progress" })
-                          }
-                        >
-                          Start
-                        </button>
+                          >
+                            Start
+                          </button>
+                        </form>
                       </>
                     )}
                     {status === "Progress" && (

@@ -5,7 +5,6 @@ import "../css/ChatBox.css";
 
 //Creates the chatbox, controls the new messages and the already existing ones
 //Handles the delete functionality aswell
-
 function Chatbox({ currentUser }) {
   const [chatHistory, setChatHistory] = useState([]);
   const [currentMessage, setCurrentMessage] = useState("");
@@ -24,11 +23,10 @@ function Chatbox({ currentUser }) {
         : [];
       setChatHistory(loadedMessages);
     });
-
-    return;
   }, []);
 
-  async function sendMessage() {
+  async function sendMessage(event) {
+    event.preventDefault();
     if (currentMessage.trim() !== "") {
       try {
         const username = currentUser.email.split("@")[0];
@@ -76,13 +74,15 @@ function Chatbox({ currentUser }) {
         ))}
       </div>
       <div className="new-message">
-        <input
-          type="text"
-          value={currentMessage}
-          onChange={(e) => setCurrentMessage(e.target.value)}
-          placeholder="Type a message"
-        />
-        <button onClick={sendMessage}>Send</button>
+        <form onSubmit={sendMessage}>
+          <input
+            type="text"
+            value={currentMessage}
+            onChange={(e) => setCurrentMessage(e.target.value)}
+            placeholder="Type a message"
+          />
+          <button type="submit">Send</button>
+        </form>
       </div>
     </div>
   );
