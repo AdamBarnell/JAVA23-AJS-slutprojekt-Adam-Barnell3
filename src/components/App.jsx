@@ -9,7 +9,7 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import LoginForm from "./LoginPage";
 import ScrumbBoard from "./ScrumbBoard";
-
+// Uses as navigation hub for directing from login screen to the main 
 export function App() {
   const [user, setUser] = useState(null);
   const [isAuthenticating, setIsAuthenticating] = useState(true);
